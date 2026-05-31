@@ -1,5 +1,4 @@
-# Ava Studio
-
+# Ava Studi
 A premium static website blending the dark SaaS precision of Nuvion with the
 monochrome portfolio drama of Portfolite.
 
