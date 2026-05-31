@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ava Studio</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050505'/%3E%3Cpath d='M18 46 31.8 16 46 46h-8.4l-2.1-5.1H28l-2.1 5.1H18Zm12.3-11.2h3l-1.5-3.8-1.5 3.8Z' fill='%23f6f4ef'/%3E%3C/svg%3E"
+    />
     <meta
       name="description"
       content="Ava Studio is a premium digital brand and automation studio for launches, dashboards, and campaign systems."
@@ -19,185 +23,645 @@
   <body>
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href="#top" aria-label="Ava Studio home">
+        <a class="brand" href="#top" aria-label="ShieldTX home">
           <span class="brand-mark" aria-hidden="true"></span>
-          <span>Ava Studio</span>
+          <span>ShieldTX</span>
         </a>
         <nav class="nav-links" aria-label="Main navigation">
-          <a href="#services">Services</a>
-          <a href="#work">Projects</a>
-          <a href="#system">System</a>
-          <a href="#contact">Contact</a>
+          <a class="wave-link" href="#top" aria-label="Home">
+            <span aria-hidden="true"><span>H</span><span>o</span><span>m</span><span>e</span></span>
+          </a>
+          <a class="wave-link" href="#features" aria-label="Features">
+            <span aria-hidden="true"><span>F</span><span>e</span><span>a</span><span>t</span><span>u</span><span>r</span><span>e</span><span>s</span></span>
+          </a>
+          <a class="wave-link" href="https://www.shieldtx.xyz/blog" aria-label="Blog">
+            <span aria-hidden="true"><span>B</span><span>l</span><span>o</span><span>g</span></span>
+          </a>
         </nav>
-        <a class="nav-cta" href="#contact">Start now <span aria-hidden="true">→</span></a>
+        <a class="nav-cta wave-link" href="https://beta.shieldtx.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Open App">
+          <span aria-hidden="true"><span>O</span><span>p</span><span>e</span><span>n</span><span class="wave-space"> </span><span>A</span><span>p</span><span>p</span></span>
+        </a>
       </header>
 
       <main id="top">
         <section class="hero">
           <img
             class="hero-media"
-            src="assets/hero-fluid.png"
-            alt="Abstract monochrome fluid light forms on a black background"
+            src="assets/hero-fluid-blue.png"
+            alt="Abstract dark blue fluid lines on a pale blue background"
           />
+          <div class="hero-motion-layer" aria-hidden="true"></div>
           <div class="hero-vignette" aria-hidden="true"></div>
-          <div class="hero-content">
-            <p class="eyebrow"><span></span> Intelligent brand systems</p>
-            <h1>Launch work that looks rare and runs fast.</h1>
-            <p class="hero-copy">
-              Ava blends sharp identity design, conversion-led web experiences, and
-              automation dashboards into one calm operating system for modern teams.
-            </p>
-            <div class="button-row">
-              <a class="button primary" href="#contact">Get started</a>
-              <a class="button secondary" href="#work">See projects</a>
+          <div class="hero-content" data-reveal>
+            <h1 class="rotating-title" aria-label="Private. Protected. Proven.">
+              <span class="rotating-word is-one" aria-hidden="true">Private.</span>
+              <span class="rotating-word is-two" aria-hidden="true">Protected.</span>
+              <span class="rotating-word is-three" aria-hidden="true">Proven.</span>
+            </h1>
+            <div class="hero-lower">
+              <p class="hero-copy hero-copy-display">
+                ShieldTX stands between your wallet and every trade — with a fresh address, every single time.
+              </p>
+              <div class="hero-actions" aria-label="Hero actions">
+                <a class="hero-action hero-action-primary" href="#access" data-beta-open>
+                  Request Access <span aria-hidden="true">→</span>
+                </a>
+                <a class="hero-action hero-action-secondary" href="#leak">Scan wallet</a>
+              </div>
             </div>
-          </div>
-
-          <div class="scroll-cue" aria-hidden="true">
-            <span>Scroll down</span>
-            <i></i>
-            <span>to explore</span>
-          </div>
-
-          <div class="logo-strip" aria-label="Selected client names" data-reveal>
-            <span>Northline</span>
-            <span>Opal Labs</span>
-            <span>Asterisk</span>
-            <span>Syntrix</span>
-            <span>Oasis</span>
           </div>
         </section>
 
-        <section class="section intro-section" id="services">
-          <div class="section-heading" data-reveal>
-            <p class="pill-label">Core services</p>
-            <h2>Built with portfolio drama and SaaS precision.</h2>
-            <p>
-              From the first visual impression to the backend workflow, every layer is
-              designed to make your brand easier to trust, sell, and operate.
-            </p>
-          </div>
-
-          <div class="feature-grid">
-            <article class="feature-card" data-reveal>
-              <span>01</span>
-              <h3>Identity Systems</h3>
-              <p>Positioning, visual direction, launch kits, and reusable brand rules.</p>
-            </article>
-            <article class="feature-card" data-reveal>
-              <span>02</span>
-              <h3>Conversion Websites</h3>
-              <p>Editorial pages, product stories, case studies, and focused contact paths.</p>
-            </article>
-            <article class="feature-card" data-reveal>
-              <span>03</span>
-              <h3>Automation Hubs</h3>
-              <p>Dashboards, lead routing, content calendars, and AI-assisted team workflows.</p>
-            </article>
+        <section class="phone-showcase" aria-label="ShieldTX app preview">
+          <div class="phone-stage">
+            <div class="phone-frame portrait-tab-frame" data-phone-frame>
+              <div class="phone-bezel tablet-bezel">
+                <div class="phone-screen portrait-tab-screen">
+                  <video
+                    class="phone-video"
+                    src="assets/shieldtx-tab-video.mov"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                    disablepictureinpicture
+                    poster="assets/hero-fluid-blue.png"
+                  ></video>
+                  <div class="phone-placeholder" aria-hidden="true">
+                    <div class="phone-status">
+                      <span>9:41</span>
+                      <span>ShieldTX</span>
+                    </div>
+                    <div class="phone-card phone-card-main">
+                      <span>Private address</span>
+                      <strong>0xA7...91F2</strong>
+                    </div>
+                    <div class="phone-grid">
+                      <div>
+                        <span>Route</span>
+                        <strong>Shielded</strong>
+                      </div>
+                      <div>
+                        <span>Footprint</span>
+                        <strong>Zero</strong>
+                      </div>
+                    </div>
+                    <div class="phone-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section class="dashboard-section" id="system">
-          <div class="product-window" data-reveal>
-            <div class="window-sidebar">
-              <strong>AVA</strong>
-              <a class="active" href="#system">Dashboard</a>
-              <a href="#services">Automations</a>
-              <a href="#work">Campaigns</a>
-              <a href="#contact">Insights</a>
-            </div>
-            <div class="window-main">
-              <div class="window-topbar">
-                <span>AI recommendations</span>
-                <span>Live launch system</span>
-                <span>Weekly reports</span>
-              </div>
-              <div class="metrics-grid">
-                <article>
-                  <small>Active workflows</small>
-                  <strong>21 of 24</strong>
-                  <div class="mini-list">
-                    <span>Email launch <i></i></span>
-                    <span>Brand review <i></i></span>
-                    <span>Report sync <i></i></span>
+        <section class="leak-section" id="leak" aria-labelledby="leak-title">
+          <div class="leak-head" data-reveal>
+            <p>The problems</p>
+            <h2 id="leak-title">Your portfolio is public gossip.</h2>
+          </div>
+
+          <div class="leak-cards" data-reveal>
+            <article class="leak-card leak-card-public">
+              <div class="leak-card-visual">
+                <h3><span>01.</span> NOTHING'S PRIVATE.</h3>
+                <div class="exposure-panel" aria-hidden="true">
+                  <div class="exposure-corners"></div>
+                  <div class="exposure-row exposure-row-pnl">
+                    <span>P&amp;L</span>
+                    <i></i>
+                    <strong>+$24,810</strong>
                   </div>
-                </article>
-                <article>
-                  <small>Performance overview</small>
-                  <strong>84% lift</strong>
-                  <div class="bar-chart" aria-hidden="true">
-                    <i style="height: 42%"></i>
-                    <i style="height: 74%"></i>
-                    <i style="height: 58%"></i>
-                    <i style="height: 33%"></i>
-                    <i style="height: 49%"></i>
-                    <i style="height: 66%"></i>
+                  <div class="exposure-row">
+                    <span>POSITION</span>
+                    <i></i>
+                    <strong>LONG 10x</strong>
                   </div>
-                </article>
+                  <div class="exposure-row">
+                    <span>ENTRY</span>
+                    <i></i>
+                    <strong>40.188</strong>
+                  </div>
+                  <div class="exposure-row exposure-row-size">
+                    <span>SIZE</span>
+                    <i></i>
+                    <strong>$142,000</strong>
+                  </div>
+                  <div class="exposure-radar"></div>
+                  <div class="exposure-badge"></div>
+                </div>
+                <div class="leak-card-copy">
+                  <p>Your P&amp;L, position history, and account size are visible the moment you place a trade.</p>
+                </div>
               </div>
-              <div class="activity-table" aria-label="Recent activity">
-                <span>2:45 PM</span><span>Homepage narrative approved</span><em>Completed</em>
-                <span>1:32 PM</span><span>Campaign assets queued</span><em>Running</em>
-                <span>12:10 PM</span><span>Lead route updated</span><em>Completed</em>
+            </article>
+            <article class="leak-card leak-card-speed">
+              <div class="leak-card-visual">
+                <h3><span>02.</span> YOU'RE SOMEONE'S EDGE.</h3>
+                <div class="edge-panel" aria-hidden="true">
+                  <div class="edge-signal">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="edge-feed">
+                    <span>TRADE SIGNAL</span>
+                    <strong>Copied in 0.8s</strong>
+                  </div>
+                  <div class="edge-copybots">
+                    <i>BOT 01</i>
+                    <i>BOT 02</i>
+                    <i>BOT 03</i>
+                  </div>
+                </div>
+                <div class="leak-card-copy">
+                  <p>Tools mirror your trades within seconds of execution and copy traders erode your edge.</p>
+                </div>
               </div>
-            </div>
+            </article>
+            <article class="leak-card leak-card-denied">
+              <div class="leak-card-visual">
+                <h3><span>03.</span> INSTITUTIONS WALK AWAY.</h3>
+                <div class="institution-panel" aria-hidden="true">
+                  <div class="institution-stack">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                  <div class="institution-status">
+                    <span>VAULT REVIEW</span>
+                    <strong>Access denied</strong>
+                  </div>
+                  <div class="institution-checks">
+                    <span>BOOK VISIBLE</span>
+                    <span>SIZE EXPOSED</span>
+                  </div>
+                </div>
+                <div class="leak-card-copy">
+                  <p>Vaults and teams cannot operate where competitors read the book every hour.</p>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
         <section class="section work-section" id="work">
-          <div class="section-heading" data-reveal>
-            <p class="pill-label">Selected work</p>
-            <h2>Case studies with a gallery-first pulse.</h2>
+          <div class="scan-stage">
+            <div class="section-heading" data-reveal>
+              <p class="pill-label">Let's catch it red-handed</p>
+              <h2>See the leak for yourself.</h2>
+            </div>
+            <div class="wallet-scan" data-reveal>
+              <p class="wallet-scan-copy">
+                Enter any Hyperliquid wallet to pull its exposure. Join the ShieldTX waitlist to see the full case file.
+              </p>
+              <form class="wallet-scan-form">
+                <label class="sr-only" for="wallet-address">Hyperliquid wallet address</label>
+                <input id="wallet-address" type="text" placeholder="0x… your Hyperliquid address" />
+                <button type="submit">Scan</button>
+              </form>
+              <div class="wallet-samples" aria-label="Sample wallet options">
+                <span>Don't have an address?</span>
+                <button type="button">Try sample whale</button>
+                <button type="button">Try sample alpha trader</button>
+                <button type="button">Try sample leaderboard</button>
+              </div>
+            </div>
           </div>
 
-          <div class="work-grid">
-            <article class="work-card work-card-a" data-reveal>
-              <div class="visual visual-a"></div>
-              <a href="#contact">View case study <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="work-card tall" data-reveal>
-              <div class="visual visual-b"></div>
-              <a href="#contact">View case study <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="work-card work-card-c" data-reveal>
-              <div class="visual visual-c"></div>
-              <a href="#contact">View case study <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="work-card" data-reveal>
-              <div class="visual visual-d"></div>
-              <a href="#contact">View case study <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="work-card wide" data-reveal>
-              <div class="visual visual-e"></div>
-              <a href="#contact">View case study <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="work-card" data-reveal>
-              <div class="visual visual-f"></div>
-              <a href="#contact">View case study <span aria-hidden="true">↗</span></a>
-            </article>
+        </section>
+
+        <section class="section moves-section">
+          <div class="moves-layout">
+            <div class="moves-intro" data-reveal>
+              <p class="pill-label">The usual moves</p>
+              <h2>Still not enough.</h2>
+            </div>
+
+            <div class="moves-list" data-reveal>
+              <article class="move-row move-row-expand">
+                <span>01</span>
+                <h3>Multiple wallets</h3>
+                <div class="move-copy">
+                  <p>Fractures your workflow.</p>
+                  <p class="move-detail">
+                    Managing gas, seed phrases, and transaction history across wallets adds operational overhead with no upside.
+                  </p>
+                </div>
+              </article>
+              <article class="move-row move-row-expand">
+                <span>02</span>
+                <h3>Wallet clustering</h3>
+                <div class="move-copy">
+                  <p>Patterns give you away.</p>
+                  <p class="move-detail">
+                    Arkham and Nansen link wallets through timing, not addresses. Same asset, same direction, seconds is enough to group your wallets.
+                  </p>
+                </div>
+              </article>
+              <article class="move-row move-row-expand">
+                <span>03</span>
+                <h3>CEX routing</h3>
+                <div class="move-copy">
+                  <p>Control is no longer yours.</p>
+                  <p class="move-detail">
+                    CEX hands over custody of your assets and leaves the venue. You lose self-custody and on-chain composability for shielding that should be native.
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
 
-        <section class="section testimonial-section">
-          <div class="testimonial" data-reveal>
+        <section class="section save-section" id="save">
+          <div class="save-heading section-heading" id="features" data-reveal>
+            <p class="pill-label">How we save you</p>
+            <h2>Stop the gossip. Own your edge.</h2>
             <p>
-              “Ava helped us move from a pretty brand to a working launch system. The
-              site, dashboard, and campaign flow finally feel like one product.”
+              Full confidentiality on every execution. No broadcasts, no copy bots, no open books — just clean, private trading on Hyperliquid.
             </p>
-            <span>Mira Shah, Founder at Opal Labs</span>
+          </div>
+
+          <div class="save-card-grid">
+            <article class="save-card" data-reveal>
+              <span>/ 01</span>
+              <i><b></b><b></b><b></b><b></b></i>
+              <div class="save-card-copy">
+                <h3>Execution shielding</h3>
+                <p>Your size, entry, and liquidation stay off the radar. Copy bots have nothing to follow.</p>
+              </div>
+              <div class="save-card-visual shield-visual" aria-hidden="true">
+                <div class="shield-address">
+                  <strong>0x7A9F3C</strong>
+                  <em>
+                    <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+                  </em>
+                  <strong>3C21</strong>
+                </div>
+                <div class="shield-tag">Shielded</div>
+              </div>
+            </article>
+            <article class="save-card" data-reveal>
+              <span>/ 02</span>
+              <i><b></b><b></b><b></b><b></b></i>
+              <div class="save-card-copy">
+                <h3>Hyperliquid fill parity</h3>
+                <p>Native HL order book. Same liquidity, same fills. The gossip stops, the execution doesn't.</p>
+              </div>
+              <div class="save-card-visual parity-visual" aria-hidden="true">
+                <div class="parity-chart">
+                  <svg viewBox="0 0 260 120" role="img" aria-label="">
+                    <path class="parity-area" d="M18 88 L62 68 L104 72 L146 50 L188 40 L242 20 L242 110 L18 110 Z"></path>
+                    <path class="parity-line" d="M18 88 L62 68 L104 72 L146 50 L188 40 L242 20"></path>
+                    <circle class="parity-dot dot-one" cx="104" cy="72" r="5"></circle>
+                    <circle class="parity-dot dot-two" cx="188" cy="40" r="5"></circle>
+                    <circle class="parity-dot dot-three" cx="242" cy="20" r="7"></circle>
+                  </svg>
+                </div>
+                <div class="parity-meta">
+                  <span>Native HL</span>
+                  <strong>0 bps routing tax</strong>
+                </div>
+              </div>
+            </article>
+            <article class="save-card" data-reveal>
+              <span>/ 03</span>
+              <i><b></b><b></b><b></b><b></b></i>
+              <div class="save-card-copy">
+                <h3>Compliant by design</h3>
+                <p>Desks and vaults move large volumes on-chain. Compliance built in, not bolted on.</p>
+              </div>
+              <div class="save-card-visual compliance-visual" aria-hidden="true">
+                <div class="compliance-radar">
+                  <span></span>
+                  <span></span>
+                  <b></b>
+                  <b></b>
+                  <em></em>
+                </div>
+                <div class="blocked-tag">Blocked</div>
+              </div>
+            </article>
+            <article class="save-card" data-reveal>
+              <span>/ 04</span>
+              <i><b></b><b></b><b></b><b></b></i>
+              <div class="save-card-copy">
+                <h3>You hold the keys</h3>
+                <p>No custody. Permissionless withdrawals, verified on-chain. Control stays yours at every step.</p>
+              </div>
+              <div class="save-card-visual keys-visual" aria-hidden="true">
+                <div class="key-box">
+                  <span>Vault</span>
+                  <strong>25,000 <small>USDC</small></strong>
+                </div>
+                <div class="key-transfer">
+                  <div class="key-arrow"></div>
+                  <b></b><b></b><b></b>
+                </div>
+                <div class="key-box key-wallet">
+                  <span>Your wallet</span>
+                  <strong>25,000 <small>USDC</small></strong>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
-        <section class="contact-section" id="contact" data-reveal>
-          <div>
-            <p class="pill-label">Start a project</p>
-            <h2>Bring the brand and the machine into the same room.</h2>
+        <section class="compare-section" id="compare">
+          <div class="compare-inner">
+            <div class="compare-heading" data-reveal>
+              <p class="pill-label">Compare</p>
+              <h2>See how we're different.</h2>
+            </div>
+
+            <div class="compare-table-wrap" data-compare-console data-active-option="shieldtx" data-reveal>
+              <div class="compare-card-grid" aria-label="ShieldTX comparison">
+                <article class="compare-option-card is-active" data-compare-option="shieldtx" tabindex="0">
+                  <div class="compare-card-head">
+                    <h3>ShieldTX</h3>
+                    <span>6/6</span>
+                  </div>
+                  <ul>
+                    <li><span class="check">&#10003;</span> Position Confidentiality</li>
+                    <li><span class="check">&#10003;</span> Non-custodial</li>
+                    <li><span class="check">&#10003;</span> Copy-bot resistant</li>
+                    <li><span class="check">&#10003;</span> Wallet De-linked</li>
+                    <li><span class="check">&#10003;</span> Compliant by design</li>
+                  </ul>
+                  <p>Operational Overhead <strong>Low</strong></p>
+                </article>
+
+                <article class="compare-option-card" data-compare-option="direct" tabindex="0">
+                  <div class="compare-card-head">
+                    <h3>Direct Hyperliquid</h3>
+                    <span>3/6</span>
+                  </div>
+                  <ul>
+                    <li><span class="cross">&#10005;</span> Position Confidentiality</li>
+                    <li><span class="check">&#10003;</span> Non-custodial</li>
+                    <li><span class="cross">&#10005;</span> Copy-bot resistant</li>
+                    <li><span class="cross">&#10005;</span> Wallet De-linked</li>
+                    <li><span class="check">&#10003;</span> Compliant by design</li>
+                  </ul>
+                  <p>Operational Overhead <strong>Low</strong></p>
+                </article>
+
+                <article class="compare-option-card" data-compare-option="multi" tabindex="0">
+                  <div class="compare-card-head">
+                    <h3>Multi-Wallet</h3>
+                    <span>1/6</span>
+                  </div>
+                  <ul>
+                    <li><span class="cross">&#10005;</span> Position Confidentiality</li>
+                    <li><span class="check">&#10003;</span> Non-custodial</li>
+                    <li><span class="cross">&#10005;</span> Copy-bot resistant</li>
+                    <li><span class="cross">&#10005;</span> Wallet De-linked</li>
+                    <li><span class="cross">&#10005;</span> Compliant by design</li>
+                  </ul>
+                  <p>Operational Overhead <strong>High</strong></p>
+                </article>
+
+                <article class="compare-option-card" data-compare-option="cex" tabindex="0">
+                  <div class="compare-card-head">
+                    <h3>CEX</h3>
+                    <span>4/6</span>
+                  </div>
+                  <ul>
+                    <li><span class="check">&#10003;</span> Position Confidentiality</li>
+                    <li><span class="cross">&#10005;</span> Non-custodial</li>
+                    <li><span class="check">&#10003;</span> Copy-bot resistant</li>
+                    <li><span class="cross">&#10005;</span> Wallet De-linked</li>
+                    <li><span class="check">&#10003;</span> Compliant by design</li>
+                  </ul>
+                  <p>Operational Overhead <strong>Low</strong></p>
+                </article>
+              </div>
+            </div>
           </div>
-          <a class="button primary" href="mailto:hello@avastudio.example">hello@avastudio.example</a>
         </section>
+
+        <section class="faq-section" id="faq" aria-labelledby="faq-title">
+          <div class="faq-inner">
+            <div class="faq-heading" data-reveal>
+              <p>FAQs</p>
+              <h2 id="faq-title">Have Questions?</h2>
+            </div>
+
+            <div class="faq-list" data-reveal>
+              <details class="faq-item" open>
+                <summary>
+                  <span>Is this like Tornado Cash?</span>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <p>
+                  No. ShieldTX is a compliant trading solution for Hyperliquid traders looking to protect against copy-bots, competitors and adversaries.
+                </p>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span>What pairs are supported?</span>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <p>
+                  Every pair available on Hyperliquid is supported. If there's a specific pair you'd like added, get in touch.
+                </p>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span>What is the maximum leverage available?</span>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <p>
+                  The maximum leverage on ShieldTX is the same as Hyperliquid.
+                </p>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span>Does shielding affect my fills?</span>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <p>
+                  No. Execution is native HL: same order book, same liquidity. There is no slippage premium for shielding.
+                </p>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span>What does it cost?</span>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <p>
+                  Private beta access members get discounted pricing.
+                </p>
+                <div class="faq-pricing">
+                  <div>
+                    <span>Trading</span>
+                    <ul>
+                      <li><b>Open Position (Market)</b><em>5 bps of notional + $1</em></li>
+                      <li><b>Open Position (Limit)</b><em>5 bps of notional + $1, refunded if unfilled</em></li>
+                      <li><b>Close Position</b><em>5 bps of notional + ~$1 gas</em></li>
+                      <li><b>Close Position (skip shielding)</b><em>Free</em></li>
+                      <li><b>Liquidation</b><em>None</em></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span>Account</span>
+                    <ul>
+                      <li><b>Deposit</b><em>Free</em></li>
+                      <li><b>Withdraw to external wallet</b><em>$2</em></li>
+                      <li><b>Private transfer (within ShieldTX)</b><em>Free</em></li>
+                    </ul>
+                  </div>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span>Who controls the vault / my funds?</span>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <p>
+                  You do. Funds are locked in a smart contract on Arbitrum. Core operations are permissionless and verified by zero-knowledge proofs, no admin key required. See the full breakdown in <a href="https://www.shieldtx.xyz/trust-model/" target="_blank" rel="noopener noreferrer">the trust model</a>.
+                </p>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span>Is there an API?</span>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <p>
+                  API access is on the roadmap post-MVP. If you're running algo strategies, <a href="https://www.shieldtx.xyz/contact/" target="_blank" rel="noopener noreferrer">reach out directly</a>. Early access conversations are open.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="private-beta-section" id="access" aria-labelledby="private-beta-title">
+          <div class="private-beta-inner">
+            <div class="private-beta-copy" data-reveal>
+              <p class="pill-label">Private beta</p>
+              <h2 id="private-beta-title">Request access.</h2>
+              <p>500 invites for the first cohort. Three quick steps — we prioritise traders with the most to lose from copy-trading.</p>
+              <button class="private-beta-trigger" type="button" data-beta-open>
+                Request access <span aria-hidden="true">-&gt;</span>
+              </button>
+            </div>
+
+            <div class="private-beta-card" data-beta-card aria-hidden="true">
+              <div class="beta-progress" aria-hidden="true">
+                <span data-beta-progress></span>
+              </div>
+
+              <form class="beta-form" data-beta-form novalidate>
+                <section class="beta-step is-active" data-beta-step="1">
+                  <span class="beta-eyebrow">Step 1 of 3</span>
+                  <h3>Your email.</h3>
+                  <p>We'll send your invite to this address.</p>
+                  <label class="beta-field">
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="you@domain.com" autocomplete="email" required />
+                  </label>
+                </section>
+
+                <section class="beta-step" data-beta-step="2">
+                  <span class="beta-eyebrow">Step 2 of 3</span>
+                  <h3>Tell us about your trading.</h3>
+
+                  <label class="beta-field">
+                    <span>What do you primarily trade?</span>
+                    <select name="trade-type" required>
+                      <option value="" selected disabled>Choose one...</option>
+                      <option>Perps only</option>
+                      <option>Mostly perps, some spot</option>
+                      <option>Mix of perps and spot</option>
+                      <option>Mostly spot</option>
+                    </select>
+                  </label>
+
+                  <fieldset class="beta-field beta-checks">
+                    <legend>Which platforms do you actively trade on? <small>Select all that apply</small></legend>
+                    <label><input type="checkbox" name="platforms" value="Hyperliquid" /> Hyperliquid</label>
+                    <label><input type="checkbox" name="platforms" value="dYdX" /> dYdX</label>
+                    <label><input type="checkbox" name="platforms" value="GMX / GNS" /> GMX / GNS</label>
+                    <label><input type="checkbox" name="platforms" value="Binance / Bybit (CEX)" /> Binance / Bybit (CEX)</label>
+                    <label><input type="checkbox" name="platforms" value="Other DEX" /> Other DEX</label>
+                  </fieldset>
+
+                  <label class="beta-field">
+                    <span>Average monthly trading volume?</span>
+                    <select name="volume" required>
+                      <option value="" selected disabled>Choose one...</option>
+                      <option>&lt; $50K</option>
+                      <option>$50K - $250K</option>
+                      <option>$250K - $1M</option>
+                      <option>$1M - $5M</option>
+                      <option>$5M+</option>
+                    </select>
+                  </label>
+                </section>
+
+                <section class="beta-step" data-beta-step="3">
+                  <span class="beta-eyebrow">Step 3 of 3</span>
+                  <h3>Your shielding needs.</h3>
+
+                  <label class="beta-field">
+                    <span>Have you been copied or front-run before?</span>
+                    <select name="pain" required>
+                      <option value="" selected disabled>Choose one...</option>
+                      <option>Yes — it's a recurring problem</option>
+                      <option>Yes — it's happened a few times</option>
+                      <option>I suspect so but can't confirm</option>
+                      <option>No / not sure</option>
+                    </select>
+                  </label>
+
+                  <fieldset class="beta-field beta-checks">
+                    <legend>How do you currently protect your trades? <small>Select all that apply</small></legend>
+                    <label><input type="checkbox" name="protection" value="Multiple wallets" /> Multiple wallets</label>
+                    <label><input type="checkbox" name="protection" value="Timing obfuscation" /> Timing obfuscation (odd hours, delayed entries)</label>
+                    <label><input type="checkbox" name="protection" value="Smaller position sizes" /> Smaller position sizes</label>
+                    <label><input type="checkbox" name="protection" value="Private RPCs / MEV protection" /> Private RPCs / MEV protection</label>
+                    <label><input type="checkbox" name="protection" value="Nothing" /> Nothing — I just accept the leakage</label>
+                  </fieldset>
+
+                  <label class="beta-field">
+                    <span>How soon do you need shielded execution?</span>
+                    <select name="urgency" required>
+                      <option value="" selected disabled>Choose one...</option>
+                      <option>Immediately — I'm losing alpha now</option>
+                      <option>Within a month</option>
+                      <option>Exploring, no rush</option>
+                    </select>
+                  </label>
+                </section>
+
+                <section class="beta-step beta-result" data-beta-step="result">
+                  <span class="beta-eyebrow">You're on the list</span>
+                  <h3>Thanks — request received.</h3>
+                  <p>We'll reach out from <b>beta@shieldtx.app</b> when access opens up.</p>
+                </section>
+
+                <p class="beta-error" data-beta-error hidden>Please complete the required fields before continuing.</p>
+
+                <div class="beta-nav">
+                  <button type="button" class="beta-back" data-beta-back hidden>&lt;- Back</button>
+                  <button type="button" class="beta-next" data-beta-next>Continue <span aria-hidden="true">-&gt;</span></button>
+                  <button type="submit" class="beta-submit" data-beta-submit hidden>Submit application <span aria-hidden="true">-&gt;</span></button>
+                  <button type="button" class="beta-done" data-beta-done hidden>Done</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>
