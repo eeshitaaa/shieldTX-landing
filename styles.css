@@ -80,15 +80,15 @@ a {
   min-height: 58px;
   margin: 0;
   padding: 8px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035));
-  backdrop-filter: blur(14px) saturate(115%);
-  -webkit-backdrop-filter: blur(14px) saturate(115%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+  backdrop-filter: blur(8px) saturate(102%);
+  -webkit-backdrop-filter: blur(8px) saturate(102%);
   box-shadow:
-    0 14px 42px rgba(4, 16, 62, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    0 8px 22px rgba(4, 16, 62, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
   transform: translateX(-50%);
 }
 
@@ -116,7 +116,7 @@ a {
 .brand {
   gap: 9px;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 520;
   letter-spacing: 0.02em;
 }
 
@@ -149,9 +149,9 @@ a {
 .nav-links {
   justify-self: end;
   gap: clamp(22px, 3vw, 36px);
-  color: rgba(244, 249, 255, 0.76);
+  color: rgba(244, 249, 255, 0.68);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 440;
 }
 
 .nav-links a {
@@ -253,9 +253,9 @@ a {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.88);
   font-size: 17px;
-  font-weight: 800;
+  font-weight: 520;
   isolation: isolate;
   box-shadow: none;
   transition:
@@ -3768,12 +3768,21 @@ h1 {
 .site-footer {
   position: relative;
   padding: clamp(44px, 5vw, 64px) 0 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background:
-    radial-gradient(circle at 14% 4%, rgba(111, 164, 255, 0.14), transparent 24rem),
-    linear-gradient(180deg, rgba(8, 24, 72, 0.42), rgba(6, 16, 42, 0.96)),
-    #071027;
+  border-top: 0;
+  background: transparent;
+  box-shadow: none;
   color: var(--text);
+}
+
+.site-footer::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(560px, calc(100vw - 96px));
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(234, 244, 255, 0.16), transparent);
+  content: "";
+  transform: translateX(-50%);
 }
 
 .site-footer-inner {
@@ -5301,13 +5310,13 @@ h1 {
   }
 
   .brand {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .nav-cta {
     min-height: 38px;
     padding-left: 4px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .hero {
