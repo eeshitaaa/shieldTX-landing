@@ -1,4 +1,6 @@
-const revealTargets = document.querySelectorAll("[data-reveal]");
+const revealTargets = document.querySelectorAll("[data-reveal]:not(.save-card)");
+const saveCards = document.querySelectorAll(".save-card[data-reveal]");
+const saveCardGrid = document.querySelector(".save-card-grid");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -16,32 +18,44 @@ revealTargets.forEach((target, index) => {
   revealObserver.observe(target);
 });
 
+const replaySaveCards = () => {
+  saveCards.forEach((card) => {
+    card.classList.remove("is-visible");
+  });
+
+  window.requestAnimationFrame(() => {
+    saveCards.forEach((card, index) => {
+      card.style.transitionDelay = `${index * 110}ms`;
+      card.classList.add("is-visible");
+    });
+  });
+};
+
+if (saveCardGrid && saveCards.length) {
+  const saveCardsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          replaySaveCards();
+        } else {
+          saveCards.forEach((card) => {
+            card.classList.remove("is-visible");
+          });
+        }
+      });
+    },
+    { threshold: 0.22, rootMargin: "-10% 0px -18% 0px" }
+  );
+
+  saveCardsObserver.observe(saveCardGrid);
+}
+
 const hero = document.querySelector(".hero");
 const heroMedia = document.querySelector(".hero-media");
 const heroMotionLayer = document.querySelector(".hero-motion-layer");
 const phoneShowcase = document.querySelector(".phone-showcase");
 const phoneFrame = document.querySelector("[data-phone-frame]");
 const phoneVideo = document.querySelector(".phone-video");
-const compareConsole = document.querySelector("[data-compare-console]");
-
-const compareVerdicts = {
-  shieldtx: {
-    title: "ShieldTX",
-    copy: "Private execution, wallet de-linking, and low overhead without giving up custody."
-  },
-  direct: {
-    title: "Direct Hyperliquid",
-    copy: "Native custody stays intact, but your fills and patterns remain visible to copy bots."
-  },
-  multi: {
-    title: "Multi-Wallet",
-    copy: "More wallets add work, but timing and behavior still link the trail back together."
-  },
-  cex: {
-    title: "CEX",
-    copy: "Confidentiality improves, but custody, venue access, and composability move out of your hands."
-  }
-};
 
 let ticking = false;
 let pointerX = 0;
@@ -55,35 +69,6 @@ if (phoneVideo) {
   });
   phoneVideo.load();
   phoneVideo.play().catch(() => {});
-}
-
-if (compareConsole) {
-  const compareButtons = compareConsole.querySelectorAll("[data-compare-option]");
-  const compareTitle = compareConsole.querySelector("[data-compare-title]");
-  const compareCopy = compareConsole.querySelector("[data-compare-copy]");
-
-  const setCompareOption = (option) => {
-    const verdict = compareVerdicts[option];
-    if (!verdict) return;
-
-    compareConsole.dataset.activeOption = option;
-    compareButtons.forEach((button) => {
-      button.classList.toggle("is-active", button.dataset.compareOption === option);
-    });
-    if (compareTitle) compareTitle.textContent = verdict.title;
-    if (compareCopy) compareCopy.textContent = verdict.copy;
-  };
-
-  compareButtons.forEach((button) => {
-    button.addEventListener("click", () => setCompareOption(button.dataset.compareOption));
-    button.addEventListener("mouseenter", () => setCompareOption(button.dataset.compareOption));
-  });
-
-  compareConsole.addEventListener("pointermove", (event) => {
-    const rect = compareConsole.getBoundingClientRect();
-    compareConsole.style.setProperty("--compare-x", `${event.clientX - rect.left}px`);
-    compareConsole.style.setProperty("--compare-y", `${event.clientY - rect.top}px`);
-  });
 }
 
 const updateScrollEffects = () => {
@@ -137,6 +122,8 @@ updateScrollEffects();
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
+    if (link.matches("[data-beta-open]")) return;
+
     const targetId = link.getAttribute("href");
     if (!targetId || targetId === "#") return;
 
@@ -163,8 +150,37 @@ const betaBack = document.querySelector("[data-beta-back]");
 const betaNext = document.querySelector("[data-beta-next]");
 const betaSubmit = document.querySelector("[data-beta-submit]");
 const betaDone = document.querySelector("[data-beta-done]");
+const betaClose = document.querySelector("[data-beta-close]");
 const betaError = document.querySelector("[data-beta-error]");
+const platformSelect = document.querySelector("[data-platform-select]");
+const platformTrigger = document.querySelector("[data-platform-trigger]");
+const platformLabel = document.querySelector("[data-platform-label]");
+const platformChecks = [...document.querySelectorAll('[name="platforms"]')];
 let betaStepIndex = 0;
+
+function closeBetaCard() {
+  betaSection?.classList.remove("is-open");
+  betaCard?.setAttribute("aria-hidden", "true");
+  if (betaError) betaError.hidden = true;
+}
+
+function openBetaCard(trigger) {
+  betaSection?.classList.add("is-open");
+  betaCard?.setAttribute("aria-hidden", "false");
+  setBetaStep(0);
+
+  if (trigger?.tagName === "A" && betaSection) {
+    betaSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.pushState(null, "", "#access");
+    return;
+  }
+
+  if (window.matchMedia("(max-width: 860px)").matches) {
+    window.setTimeout(() => {
+      betaCard?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 180);
+  }
+}
 
 function setBetaStep(index) {
   betaStepIndex = Math.max(0, Math.min(index, betaSteps.length - 1));
@@ -191,11 +207,23 @@ function betaCurrentStepValid() {
   return requiredFields.every((field) => field.checkValidity());
 }
 
+function updatePlatformLabel() {
+  if (!platformSelect || !platformLabel) return;
+
+  const selected = platformChecks.filter((input) => input.checked).map((input) => input.value);
+  platformSelect.classList.toggle("has-value", selected.length > 0);
+  platformLabel.textContent = selected.length ? selected.join(", ") : "Select platforms...";
+}
+
+function closePlatformSelect() {
+  platformSelect?.classList.remove("is-open");
+  platformTrigger?.setAttribute("aria-expanded", "false");
+}
+
 betaOpenButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    betaSection?.classList.add("is-open");
-    betaCard?.setAttribute("aria-hidden", "false");
-    setBetaStep(0);
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    openBetaCard(button);
   });
 });
 
@@ -211,6 +239,8 @@ betaBack?.addEventListener("click", () => {
   setBetaStep(betaStepIndex - 1);
 });
 
+betaClose?.addEventListener("click", closeBetaCard);
+
 betaForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!betaCurrentStepValid()) {
@@ -222,7 +252,27 @@ betaForm?.addEventListener("submit", (event) => {
 
 betaDone?.addEventListener("click", () => {
   betaForm?.reset();
+  updatePlatformLabel();
   setBetaStep(0);
 });
 
+platformTrigger?.addEventListener("click", () => {
+  const open = !platformSelect?.classList.contains("is-open");
+  platformSelect?.classList.toggle("is-open", open);
+  platformTrigger.setAttribute("aria-expanded", String(open));
+});
+
+platformChecks.forEach((input) => {
+  input.addEventListener("change", updatePlatformLabel);
+});
+
+document.addEventListener("click", (event) => {
+  if (!platformSelect?.contains(event.target)) closePlatformSelect();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closePlatformSelect();
+});
+
 setBetaStep(0);
+updatePlatformLabel();

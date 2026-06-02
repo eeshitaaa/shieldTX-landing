@@ -374,67 +374,61 @@
               <h2>See how we're different.</h2>
             </div>
 
-            <div class="compare-table-wrap" data-compare-console data-active-option="shieldtx" data-reveal>
-              <div class="compare-card-grid" aria-label="ShieldTX comparison">
-                <article class="compare-option-card is-active" data-compare-option="shieldtx" tabindex="0">
-                  <div class="compare-card-head">
-                    <h3>ShieldTX</h3>
-                    <span>6/6</span>
-                  </div>
-                  <ul>
-                    <li><span class="check">&#10003;</span> Position Confidentiality</li>
-                    <li><span class="check">&#10003;</span> Non-custodial</li>
-                    <li><span class="check">&#10003;</span> Copy-bot resistant</li>
-                    <li><span class="check">&#10003;</span> Wallet De-linked</li>
-                    <li><span class="check">&#10003;</span> Compliant by design</li>
-                  </ul>
-                  <p>Operational Overhead <strong>Low</strong></p>
-                </article>
+            <div class="compare-board compare-simple" data-reveal>
+              <div class="compare-simple-row compare-simple-head">
+                <span aria-hidden="true"></span>
+                <strong>ShieldTX</strong>
+                <span>Direct Hyperliquid</span>
+                <span>Multi-Wallet</span>
+                <span>CEX</span>
+              </div>
 
-                <article class="compare-option-card" data-compare-option="direct" tabindex="0">
-                  <div class="compare-card-head">
-                    <h3>Direct Hyperliquid</h3>
-                    <span>3/6</span>
-                  </div>
-                  <ul>
-                    <li><span class="cross">&#10005;</span> Position Confidentiality</li>
-                    <li><span class="check">&#10003;</span> Non-custodial</li>
-                    <li><span class="cross">&#10005;</span> Copy-bot resistant</li>
-                    <li><span class="cross">&#10005;</span> Wallet De-linked</li>
-                    <li><span class="check">&#10003;</span> Compliant by design</li>
-                  </ul>
-                  <p>Operational Overhead <strong>Low</strong></p>
-                </article>
+              <div class="compare-simple-row">
+                <span>Position confidentiality</span>
+                <b class="check" aria-label="Yes"></b>
+                <i class="cross" aria-label="No"></i>
+                <i class="cross" aria-label="No"></i>
+                <b class="check" aria-label="Yes"></b>
+              </div>
 
-                <article class="compare-option-card" data-compare-option="multi" tabindex="0">
-                  <div class="compare-card-head">
-                    <h3>Multi-Wallet</h3>
-                    <span>1/6</span>
-                  </div>
-                  <ul>
-                    <li><span class="cross">&#10005;</span> Position Confidentiality</li>
-                    <li><span class="check">&#10003;</span> Non-custodial</li>
-                    <li><span class="cross">&#10005;</span> Copy-bot resistant</li>
-                    <li><span class="cross">&#10005;</span> Wallet De-linked</li>
-                    <li><span class="cross">&#10005;</span> Compliant by design</li>
-                  </ul>
-                  <p>Operational Overhead <strong>High</strong></p>
-                </article>
+              <div class="compare-simple-row">
+                <span>Non-custodial</span>
+                <b class="check" aria-label="Yes"></b>
+                <b class="check" aria-label="Yes"></b>
+                <b class="check" aria-label="Yes"></b>
+                <i class="cross" aria-label="No"></i>
+              </div>
 
-                <article class="compare-option-card" data-compare-option="cex" tabindex="0">
-                  <div class="compare-card-head">
-                    <h3>CEX</h3>
-                    <span>4/6</span>
-                  </div>
-                  <ul>
-                    <li><span class="check">&#10003;</span> Position Confidentiality</li>
-                    <li><span class="cross">&#10005;</span> Non-custodial</li>
-                    <li><span class="check">&#10003;</span> Copy-bot resistant</li>
-                    <li><span class="cross">&#10005;</span> Wallet De-linked</li>
-                    <li><span class="check">&#10003;</span> Compliant by design</li>
-                  </ul>
-                  <p>Operational Overhead <strong>Low</strong></p>
-                </article>
+              <div class="compare-simple-row">
+                <span>Copy-bot resistant</span>
+                <b class="check" aria-label="Yes"></b>
+                <i class="cross" aria-label="No"></i>
+                <i class="cross" aria-label="No"></i>
+                <b class="check" aria-label="Yes"></b>
+              </div>
+
+              <div class="compare-simple-row">
+                <span>Wallet de-linked</span>
+                <b class="check" aria-label="Yes"></b>
+                <i class="cross" aria-label="No"></i>
+                <i class="cross" aria-label="No"></i>
+                <i class="cross" aria-label="No"></i>
+              </div>
+
+              <div class="compare-simple-row">
+                <span>Compliant by design</span>
+                <b class="check" aria-label="Yes"></b>
+                <b class="check" aria-label="Yes"></b>
+                <i class="cross" aria-label="No"></i>
+                <b class="check" aria-label="Yes"></b>
+              </div>
+
+              <div class="compare-simple-row">
+                <span>Operational overhead</span>
+                <em>Low</em>
+                <em>Low</em>
+                <em>High</em>
+                <em>Low</em>
               </div>
             </div>
           </div>
@@ -448,7 +442,7 @@
             </div>
 
             <div class="faq-list" data-reveal>
-              <details class="faq-item" open>
+              <details class="faq-item">
                 <summary>
                   <span>Is this like Tornado Cash?</span>
                   <i aria-hidden="true"></i>
@@ -545,14 +539,18 @@
           <div class="private-beta-inner">
             <div class="private-beta-copy" data-reveal>
               <p class="pill-label">Private beta</p>
-              <h2 id="private-beta-title">Request access.</h2>
-              <p>500 invites for the first cohort. Three quick steps — we prioritise traders with the most to lose from copy-trading.</p>
+              <h2 id="private-beta-title">Join the private beta.</h2>
+              <p>500 invites for the first cohort. Shipping now.</p>
               <button class="private-beta-trigger" type="button" data-beta-open>
                 Request access <span aria-hidden="true">-&gt;</span>
               </button>
+              <a class="private-beta-code" href="https://www.shieldtx.xyz/app" target="_blank" rel="noopener noreferrer">
+                <span>Already invited?</span> Enter your code <b aria-hidden="true">-&gt;</b>
+              </a>
             </div>
 
             <div class="private-beta-card" data-beta-card aria-hidden="true">
+              <button class="beta-close" type="button" data-beta-close aria-label="Close request access form">−</button>
               <div class="beta-progress" aria-hidden="true">
                 <span data-beta-progress></span>
               </div>
@@ -572,36 +570,50 @@
                   <span class="beta-eyebrow">Step 2 of 3</span>
                   <h3>Tell us about your trading.</h3>
 
-                  <label class="beta-field">
+                  <label class="beta-field beta-select-field">
                     <span>What do you primarily trade?</span>
-                    <select name="trade-type" required>
-                      <option value="" selected disabled>Choose one...</option>
-                      <option>Perps only</option>
-                      <option>Mostly perps, some spot</option>
-                      <option>Mix of perps and spot</option>
-                      <option>Mostly spot</option>
-                    </select>
+                    <span class="beta-select-shell">
+                      <select name="trade-type" required>
+                        <option value="" selected disabled>Choose one...</option>
+                        <option>Perps only</option>
+                        <option>Mostly perps, some spot</option>
+                        <option>Mix of perps and spot</option>
+                        <option>Mostly spot</option>
+                      </select>
+                      <i aria-hidden="true"></i>
+                    </span>
                   </label>
 
-                  <fieldset class="beta-field beta-checks">
+                  <fieldset class="beta-field beta-platform-field">
                     <legend>Which platforms do you actively trade on? <small>Select all that apply</small></legend>
-                    <label><input type="checkbox" name="platforms" value="Hyperliquid" /> Hyperliquid</label>
-                    <label><input type="checkbox" name="platforms" value="dYdX" /> dYdX</label>
-                    <label><input type="checkbox" name="platforms" value="GMX / GNS" /> GMX / GNS</label>
-                    <label><input type="checkbox" name="platforms" value="Binance / Bybit (CEX)" /> Binance / Bybit (CEX)</label>
-                    <label><input type="checkbox" name="platforms" value="Other DEX" /> Other DEX</label>
+                    <div class="beta-multiselect" data-platform-select>
+                      <button class="beta-multiselect-trigger" type="button" aria-expanded="false" data-platform-trigger>
+                        <span data-platform-label>Select platforms...</span>
+                        <i aria-hidden="true"></i>
+                      </button>
+                      <div class="beta-platform-menu" data-platform-menu>
+                        <label><input type="checkbox" name="platforms" value="Hyperliquid" /> Hyperliquid</label>
+                        <label><input type="checkbox" name="platforms" value="dYdX" /> dYdX</label>
+                        <label><input type="checkbox" name="platforms" value="GMX / GNS" /> GMX / GNS</label>
+                        <label><input type="checkbox" name="platforms" value="Binance / Bybit (CEX)" /> Binance / Bybit (CEX)</label>
+                        <label><input type="checkbox" name="platforms" value="Other DEX" /> Other DEX</label>
+                      </div>
+                    </div>
                   </fieldset>
 
-                  <label class="beta-field">
+                  <label class="beta-field beta-select-field">
                     <span>Average monthly trading volume?</span>
-                    <select name="volume" required>
-                      <option value="" selected disabled>Choose one...</option>
-                      <option>&lt; $50K</option>
-                      <option>$50K - $250K</option>
-                      <option>$250K - $1M</option>
-                      <option>$1M - $5M</option>
-                      <option>$5M+</option>
-                    </select>
+                    <span class="beta-select-shell">
+                      <select name="volume" required>
+                        <option value="" selected disabled>Choose one...</option>
+                        <option>&lt; $50K</option>
+                        <option>$50K - $250K</option>
+                        <option>$250K - $1M</option>
+                        <option>$1M - $5M</option>
+                        <option>$5M+</option>
+                      </select>
+                      <i aria-hidden="true"></i>
+                    </span>
                   </label>
                 </section>
 
@@ -659,9 +671,55 @@
           </div>
         </section>
 
+        <footer class="site-footer" id="footer" aria-label="Footer">
+          <div class="site-footer-inner">
+            <div class="footer-top">
+              <div class="footer-brand-block">
+                <a class="footer-brand" href="#top" aria-label="ShieldTX home">
+                  <span class="brand-mark" aria-hidden="true"></span>
+                  <span>ShieldTX</span>
+                </a>
+                <p>Trade without exposing your wallet.</p>
+              </div>
+
+              <nav class="footer-column" aria-label="Product">
+                <h2>Product</h2>
+                <a href="#features">Features</a>
+                <a href="#compare">Compare</a>
+                <a href="https://beta.shieldtx.xyz/" target="_blank" rel="noopener noreferrer">Open App</a>
+              </nav>
+
+              <nav class="footer-column" aria-label="Resources">
+                <h2>Resources</h2>
+                <a href="#faq">FAQ</a>
+                <a href="#leak">Scan</a>
+                <a href="https://www.shieldtx.xyz/trust-model/" target="_blank" rel="noopener noreferrer">Trust model ↗</a>
+                <a href="https://www.shieldtx.xyz/brand-book/" target="_blank" rel="noopener noreferrer">Brand book ↗</a>
+                <a href="https://www.shieldtx.xyz/blog" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+              </nav>
+
+              <nav class="footer-column" aria-label="Company">
+                <h2>Company</h2>
+                <a href="#access">Request access</a>
+                <a href="https://www.shieldtx.xyz/contact/" target="_blank" rel="noopener noreferrer">Contact ↗</a>
+              </nav>
+            </div>
+
+            <div class="footer-bottom">
+              <div class="footer-legal">
+                <span>© 2026 ShieldTX</span>
+                <a href="https://www.shieldtx.xyz/terms/" target="_blank" rel="noopener noreferrer">Terms</a>
+                <a href="https://www.shieldtx.xyz/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a>
+              </div>
+              <p class="footer-powered">Powered by <b>avail</b></p>
+              <a class="footer-social" href="https://x.com/shieldtx" target="_blank" rel="noopener noreferrer" aria-label="ShieldTX on X">X</a>
+            </div>
+          </div>
+        </footer>
+
       </main>
     </div>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
   </body>
 </html>
