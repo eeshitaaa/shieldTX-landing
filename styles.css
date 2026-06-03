@@ -108,9 +108,14 @@ a {
 
 .brand,
 .nav-cta,
-.nav-links {
+.nav-links,
+.mobile-menu-button {
   display: flex;
   align-items: center;
+}
+
+.mobile-menu-button {
+  display: none;
 }
 
 .brand {
@@ -966,7 +971,7 @@ h1 {
 
 .leak-head p {
   margin: 0 0 12px;
-  color: rgba(234, 244, 255, 0.68);
+  color: rgba(247, 250, 255, 0.78);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 14px;
   font-weight: 700;
@@ -977,10 +982,10 @@ h1 {
 .leak-head h2 {
   margin-bottom: 0;
   color: var(--text);
-  font-size: clamp(38px, 4.7vw, 66px);
+  font-size: clamp(34px, 4.2vw, 58px);
   font-weight: 600;
   line-height: 1.02;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .leak-head span {
@@ -994,8 +999,8 @@ h1 {
 .leak-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(16px, 2vw, 26px);
-  width: min(1160px, 100%);
+  gap: clamp(14px, 1.6vw, 20px);
+  width: min(980px, 100%);
   margin: 0 auto;
 }
 
@@ -1022,7 +1027,7 @@ h1 {
 
 .leak-card-visual {
   position: relative;
-  min-height: clamp(270px, 23vw, 340px);
+  min-height: clamp(220px, 18vw, 270px);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 16px;
@@ -1102,7 +1107,7 @@ h1 {
 }
 
 .leak-card-public .leak-card-visual {
-  min-height: clamp(310px, 26vw, 380px);
+  min-height: clamp(240px, 19.5vw, 292px);
   background:
     radial-gradient(circle at 22% 14%, rgba(247, 250, 255, 0.13), transparent 14rem),
     radial-gradient(circle at 78% 82%, rgba(153, 240, 255, 0.09), transparent 15rem),
@@ -1137,7 +1142,7 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: 1;
-  padding: 84px 28px 96px;
+  padding: 72px 22px 76px;
   color: rgba(234, 244, 255, 0.64);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
@@ -1501,7 +1506,7 @@ h1 {
 
 .institution-panel {
   position: absolute;
-  inset: 72px 24px 92px;
+  inset: 62px 20px 76px;
   z-index: 1;
   overflow: hidden;
   border-radius: 12px;
@@ -1610,9 +1615,9 @@ h1 {
 .leak-card-copy {
   position: absolute;
   z-index: 2;
-  right: 18px;
-  bottom: 18px;
-  left: 18px;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
   padding: 0;
 }
 
@@ -4882,13 +4887,101 @@ h1 {
 
 @media (max-width: 860px) {
   .site-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
     width: min(680px, calc(100vw - 24px));
     min-height: 56px;
+    align-content: center;
+    column-gap: 14px;
+    row-gap: 0;
   }
 
   .nav-links {
-    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 16px;
+    left: 16px;
+    grid-column: 1 / -1;
+    display: grid;
+    justify-self: auto;
+    gap: 2px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 8px;
+    background: rgba(33, 73, 177, 0.42);
+    backdrop-filter: blur(12px) saturate(110%);
+    -webkit-backdrop-filter: blur(12px) saturate(110%);
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 180ms ease,
+      transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .site-header.is-menu-open .nav-links {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    min-height: 38px;
+    justify-content: center;
+  }
+
+  .mobile-menu-button {
+    order: 3;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.76);
+    padding: 0;
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .mobile-menu-button span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transform-origin: center;
+    transition:
+      opacity 160ms ease,
+      transform 180ms ease;
+  }
+
+  .mobile-menu-button span:nth-child(2) {
+    width: 15px;
+    justify-self: end;
+  }
+
+  .mobile-menu-button:hover,
+  .site-header.is-menu-open .mobile-menu-button {
+    color: rgba(255, 255, 255, 0.94);
+  }
+
+  .site-header.is-menu-open .mobile-menu-button span:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .site-header.is-menu-open .mobile-menu-button span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+
+  .site-header.is-menu-open .mobile-menu-button span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   h1 {
@@ -4910,12 +5003,33 @@ h1 {
 
   .leak-section {
     width: 100%;
-    padding: 58px 16px 76px;
+    padding: 58px 16px 16px;
+  }
+
+  .work-section {
+    padding-top: 20px;
+  }
+
+  .scan-stage {
+    align-content: start;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 58px;
+  }
+
+  .scan-stage .section-heading {
+    margin-bottom: 30px;
   }
 
   .leak-head h2 {
-    font-size: clamp(48px, 13vw, 76px);
-    white-space: normal;
+    font-size: clamp(20px, 6vw, 32px);
+    white-space: nowrap;
+  }
+
+  .leak-head p {
+    margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
   }
 
   .work-section .section-heading h2 {
@@ -4940,7 +5054,7 @@ h1 {
   }
 
   .moves-intro h2 {
-    font-size: clamp(46px, 13vw, 74px);
+    font-size: clamp(20px, 6vw, 32px);
   }
 
   .move-row {
@@ -5006,11 +5120,11 @@ h1 {
   }
 
   .leak-card-visual {
-    min-height: 300px;
+    min-height: clamp(205px, 52vw, 225px);
   }
 
   .leak-card-public .leak-card-visual {
-    min-height: 340px;
+    min-height: clamp(225px, 56vw, 245px);
   }
 
   .work-grid {
@@ -5114,8 +5228,21 @@ h1 {
   .save-heading h2,
   .compare-heading h2,
   .faq-heading h2,
-  .private-beta-copy h2 {
-    font-size: clamp(38px, 11vw, 54px);
+  .private-beta-copy h2,
+  .moves-intro h2 {
+    font-size: clamp(20px, 6vw, 32px);
+  }
+
+  .section-heading .pill-label,
+  .save-heading .pill-label,
+  .compare-heading .pill-label,
+  .faq-heading p,
+  .private-beta-copy .pill-label,
+  .moves-intro .pill-label,
+  .leak-head p {
+    margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
   }
 
   .compare-heading h2 {
@@ -5306,7 +5433,7 @@ h1 {
     top: 12px;
     width: calc(100vw - 24px);
     min-height: 54px;
-    padding: 7px 16px;
+    padding: 7px 14px;
   }
 
   .brand {
@@ -5314,19 +5441,31 @@ h1 {
   }
 
   .nav-cta {
+    order: 2;
     min-height: 38px;
     padding-left: 4px;
     font-size: 13px;
   }
 
   .hero {
-    min-height: 790px;
+    min-height: 500px;
     margin-top: 0;
-    padding: 136px 16px 64px;
+    padding: 112px 16px 16px;
+  }
+
+  .hero-media,
+  .hero-motion-layer,
+  .hero-vignette {
+    inset: 0 0 -72px;
+  }
+
+  .hero-lower {
+    bottom: 24px;
   }
 
   .hero-copy {
     font-size: 15px;
+    margin-bottom: 24px;
   }
 
   .hero-actions {
@@ -5405,7 +5544,7 @@ h1 {
   }
 
   .compare-heading h2 {
-    font-size: clamp(38px, 11vw, 54px);
+    font-size: clamp(20px, 6vw, 32px);
   }
 
   .faq-section {
@@ -5458,7 +5597,7 @@ h1 {
   }
 
   .private-beta-copy h2 {
-    font-size: clamp(38px, 11vw, 54px);
+    font-size: clamp(20px, 6vw, 32px);
   }
 
   .private-beta-copy p:not(.pill-label) {
@@ -5541,13 +5680,141 @@ h1 {
   }
 
   .leak-card h3 {
-    font-size: 3rem;
+    font-size: 0.98rem;
+  }
+
+  .leak-card-public .leak-card-visual h3,
+  .leak-card-speed .leak-card-visual h3,
+  .leak-card-denied .leak-card-visual h3 {
+    top: 18px;
+    left: 18px;
+    gap: 8px;
+    max-width: calc(100% - 36px);
+    font-size: 0.9rem;
+  }
+
+  .exposure-panel {
+    top: 58px;
+    right: 18px;
+    bottom: auto;
+    left: 18px;
+    height: 94px;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .exposure-row {
+    grid-template-columns: 60px minmax(52px, 1fr) 64px;
+    gap: 7px;
+    margin-bottom: 7px;
+    font-size: 0.5rem;
+  }
+
+  .exposure-row i {
+    height: 5px;
+  }
+
+  .exposure-row strong {
+    font-size: 0.54rem;
+  }
+
+  .edge-panel {
+    top: 56px;
+    right: 18px;
+    bottom: auto;
+    left: 18px;
+    height: 84px;
+  }
+
+  .edge-feed {
+    top: 14px;
+    gap: 5px;
+    padding: 8px 10px;
+  }
+
+  .edge-feed span,
+  .edge-copybots i {
+    font-size: 0.5rem;
+  }
+
+  .edge-feed strong {
+    font-size: 0.66rem;
+  }
+
+  .edge-copybots {
+    right: 14px;
+    bottom: 10px;
+    left: 14px;
+    gap: 5px;
+  }
+
+  .edge-copybots i {
+    min-height: 26px;
+  }
+
+  .institution-panel {
+    top: 56px;
+    right: 18px;
+    bottom: auto;
+    left: 18px;
+    height: 84px;
+  }
+
+  .institution-stack {
+    top: 48%;
+    width: 110px;
+    height: 48px;
+  }
+
+  .institution-stack i:nth-child(2) {
+    transform: translateY(10px);
+  }
+
+  .institution-stack i:nth-child(3) {
+    transform: translateY(20px);
+  }
+
+  .institution-status {
+    top: 12px;
+    gap: 5px;
+    min-width: 118px;
+    padding: 8px 10px;
+  }
+
+  .institution-status span,
+  .institution-checks span {
+    font-size: 0.5rem;
+  }
+
+  .institution-status strong {
+    font-size: 0.66rem;
+  }
+
+  .institution-checks {
+    right: 14px;
+    bottom: 10px;
+    left: 14px;
+    gap: 5px;
+  }
+
+  .institution-checks span {
+    min-height: 26px;
   }
 
   .leak-card-copy {
-    right: 18px;
-    bottom: 18px;
-    left: 18px;
+    right: 16px;
+    bottom: 14px;
+    left: 16px;
+  }
+
+  .leak-card-copy h4 {
+    margin-bottom: 6px;
+    font-size: 1rem;
+  }
+
+  .leak-card-copy p {
+    font-size: 0.84rem;
+    line-height: 1.35;
   }
 
 }

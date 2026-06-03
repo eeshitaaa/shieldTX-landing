@@ -56,6 +56,8 @@ const heroMotionLayer = document.querySelector(".hero-motion-layer");
 const phoneShowcase = document.querySelector(".phone-showcase");
 const phoneFrame = document.querySelector("[data-phone-frame]");
 const phoneVideo = document.querySelector(".phone-video");
+const siteHeader = document.querySelector(".site-header");
+const mobileMenuButton = document.querySelector("[data-mobile-menu]");
 
 let ticking = false;
 let pointerX = 0;
@@ -120,6 +122,17 @@ window.addEventListener(
 
 updateScrollEffects();
 
+function closeMobileMenu() {
+  siteHeader?.classList.remove("is-menu-open");
+  mobileMenuButton?.setAttribute("aria-expanded", "false");
+}
+
+mobileMenuButton?.addEventListener("click", () => {
+  const open = !siteHeader?.classList.contains("is-menu-open");
+  siteHeader?.classList.toggle("is-menu-open", open);
+  mobileMenuButton.setAttribute("aria-expanded", String(open));
+});
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     if (link.matches("[data-beta-open]")) return;
@@ -131,6 +144,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     if (!target) return;
 
     event.preventDefault();
+    closeMobileMenu();
     target.scrollIntoView({ behavior: "smooth", block: "start" });
     window.history.pushState(null, "", targetId);
   });
